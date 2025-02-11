@@ -1,44 +1,40 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Try {
 
-    // Method to generate a random 6-digit OTP
-    public static String generateOTP() {
-        Random rand = new Random();
-        int otp = rand.nextInt(900000) + 100000; // Generates a 6-digit OTP
-        return String.valueOf(otp);
+    public static String generateOtp() {
+        long systemTime = System.currentTimeMillis();
+        String otpValue = String.valueOf(systemTime % 1000000);
+        return String.format("%06d", Long.parseLong(otpValue));
     }
 
-    // Method to simulate sending the OTP (printing to console for now)
-    public static void sendOTP(String phoneNumber, String otp) {
-        System.out.println("OTP sent to " + phoneNumber + ": " + otp); // Simulating SMS
+
+    public static void simulateOtpSending(String phone, String otp) {
+        System.out.println("OTP sent to " + phone + ": " + otp);
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner inputScanner = new Scanner(System.in);
 
-        // Step 1: Create an account by entering a phone number
-        System.out.println("Enter your phone number:");
-        String phoneNumber = scanner.nextLine();
 
-        // Step 2: Generate OTP
-        String otp = generateOTP();
+        System.out.println("Please enter your phone number:");
+        String userPhoneNumber = inputScanner.nextLine();
 
-        // Step 3: Simulate sending OTP to phone number
-        sendOTP(phoneNumber, otp);
 
-        // Step 4: Ask user to enter the OTP for verification
-        System.out.println("Enter the OTP sent to your phone number for verification:");
-        String enteredOTP = scanner.nextLine();
+        String generatedOtp = generateOtp();
 
-        // Step 5: Verify OTP
-        if (enteredOTP.equals(otp)) {
-            System.out.println("Account verified successfully!");
+        simulateOtpSending(userPhoneNumber, generatedOtp);
+
+        System.out.println("Please enter the OTP sent to your phone number for verification:");
+        String userEnteredOtp = inputScanner.nextLine();
+
+
+        if (userEnteredOtp.equals(generatedOtp)) {
+            System.out.println("Account successfully verified!");
         } else {
             System.out.println("Incorrect OTP. Please try again.");
         }
 
-        scanner.close();
+        inputScanner.close();
     }
 }
