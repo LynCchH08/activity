@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Espresso Coffee Description: " + espressoCoffee.describe());
         espressoCoffee.updateStock(5);
         System.out.println("Updated Espresso Coffee Stock: " + espressoCoffee.getStock());
-        espressoCoffee.discount(10); // Apply 10% discount
+        espressoCoffee.discount(10);
         System.out.println("Espresso Coffee Price after discount: $" + espressoCoffee.getPrice());
 
         System.out.println("\nLatte Coffee Price: $" + latteCoffee.calculatePrice(latteCoffee.getSize()));
@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Updated Latte Coffee Stock: " + latteCoffee.getStock());
         latteCoffee.changeRoastLevel("Dark");
         System.out.println("Updated Latte Coffee Roast Level: " + latteCoffee.getRoastLevel());
-        latteCoffee.discount(15); // Apply 15% discount
+        latteCoffee.discount(15);
         System.out.println("Latte Coffee Price after discount: $" + latteCoffee.getPrice());
     }
 }
