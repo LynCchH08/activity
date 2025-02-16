@@ -1,3 +1,5 @@
+
+
 public class Main {
     public static void main(String[] args) {
 
@@ -7,7 +9,7 @@ public class Main {
         String[] latteNotes = {"Citrus", "Sweet"};
         Coffee latteCoffee = new Coffee("Latte", "Robusta", "Medium", 4.50, "Medium", "Brazil", true, 5, latteNotes, "Drip");
 
-        System.out.println("Espresso Coffee Price: $" + espressoCoffee.calculatePrice(espressoCoffee.getSize()));
+        System.out.println("Espresso Coffee Price: $" + espressoCoffee.calculatePrice());
         System.out.println("Is Espresso Coffee in stock? " + espressoCoffee.checkStock());
         espressoCoffee.addFlavor("Fruity");
         System.out.println("Espresso Coffee Description: " + espressoCoffee.describe());
@@ -16,7 +18,7 @@ public class Main {
         espressoCoffee.discount(10);
         System.out.println("Espresso Coffee Price after discount: $" + espressoCoffee.getPrice());
 
-        System.out.println("\nLatte Coffee Price: $" + latteCoffee.calculatePrice(latteCoffee.getSize()));
+        System.out.println("\nLatte Coffee Price: $" + latteCoffee.calculatePrice());
         System.out.println("Is Latte Coffee in stock? " + latteCoffee.checkStock());
         latteCoffee.addFlavor("Creamy");
         System.out.println("Latte Coffee Description: " + latteCoffee.describe());
