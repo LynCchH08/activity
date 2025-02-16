@@ -1,15 +1,14 @@
-
 public class Coffee {
-    public String name;
-    public String type;
-    public String size;
-    public double price;
-    public String roastLevel;
-    public String origin;
-    public boolean isDecaf;
-    public int stock;
-    public String[] flavorNotes;
-    public String brewMethod;
+    private String name;
+    private String type;
+    private String size;
+    private double price;
+    private String roastLevel;
+    private String origin;
+    private boolean isDecaf;
+    private int stock;
+    private String[] flavorNotes;
+    private String brewMethod;
 
     public Coffee(String name, String type, String size, double price, String roastLevel, String origin, boolean isDecaf, int stock, String[] flavorNotes, String brewMethod) {
         this.name = name;
@@ -27,7 +26,7 @@ public class Coffee {
     public double calculatePrice(String size) {
         double finalPrice = this.price;
         if (size.equalsIgnoreCase("Medium")) {
-            finalPrice += 1.0; 
+            finalPrice += 1.0;
         } else if (size.equalsIgnoreCase("Large")) {
             finalPrice += 2.0;
         }
@@ -45,12 +44,10 @@ public class Coffee {
         flavorNotes = newFlavorNotes;
     }
 
-    // Method to update stock quantity
     public void updateStock(int quantity) {
         this.stock += quantity;
     }
 
-    // Method to describe the coffee
     public String describe() {
         StringBuilder description = new StringBuilder();
         description.append("A ").append(roastLevel).append(" roast coffee from ").append(origin)
@@ -62,17 +59,90 @@ public class Coffee {
         return description.toString();
     }
 
-    // Method to set whether the coffee is decaffeinated
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getRoastLevel() {
+        return roastLevel;
+    }
+
+    public void setRoastLevel(String roastLevel) {
+        this.roastLevel = roastLevel;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public boolean isDecaf() {
+        return isDecaf;
+    }
+
     public void setDecaf(boolean isDecaf) {
         this.isDecaf = isDecaf;
     }
 
-    // Method to change the roast level of the coffee
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public String[] getFlavorNotes() {
+        return flavorNotes;
+    }
+
+    public void setFlavorNotes(String[] flavorNotes) {
+        this.flavorNotes = flavorNotes;
+    }
+
+    public String getBrewMethod() {
+        return brewMethod;
+    }
+
+    public void setBrewMethod(String brewMethod) {
+        this.brewMethod = brewMethod;
+    }
+
     public void changeRoastLevel(String newRoastLevel) {
         this.roastLevel = newRoastLevel;
     }
 
-    // Method to apply a discount to the price
     public void discount(double percentage) {
         this.price = this.price - (this.price * (percentage / 100));
     }
